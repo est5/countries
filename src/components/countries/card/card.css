@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.card__img {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.card__text {
+  padding: 0 24px;
+  padding-bottom: 24px;
+  font-weight: 300;
+}
+
+.card__name {
+  font-weight: 800;
+}
+
+.description {
+  font-weight: 600;
+}
