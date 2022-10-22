@@ -1,5 +1,5 @@
 function Filter() {
-  return <></>;
+  return <>Filter</>;
 }
 
 export default Filter;
