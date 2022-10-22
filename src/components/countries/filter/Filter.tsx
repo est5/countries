@@ -1,9 +1,12 @@
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import { useStore } from '../../../app/store';
 import './filter.css';
 
 function Filter() {
-  const options = ['All', 'Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  const options = ['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+
+  const filterStore = useStore((state) => state.setFilter);
 
   const defaultOption = 'Select region';
   return (
@@ -12,7 +15,7 @@ function Filter() {
       options={options}
       value={defaultOption}
       placeholder="Select an option"
-      onChange={(e) => console.log(e.value)}
+      onChange={(e) => filterStore(e.value)}
     />
   );
 }
