@@ -36,7 +36,7 @@ function Countries() {
 
   const searchCountry = () => {
     if (search == '') {
-      filteredData();
+      setCountriesData(filteredByRegion);
     } else {
       setCountriesData(
         filteredByRegion.filter((e: any) =>
