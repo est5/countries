@@ -9,9 +9,10 @@
 
 .card__img {
   height: 100%;
+  cursor: pointer;
 }
 
-img {
+.country__img {
   object-fit: cover;
   height: 100%;
   width: 100%;

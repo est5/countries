@@ -12,7 +12,9 @@ function CountrieCard(cardInfo: Info) {
   return (
     <div className="card">
       <div className="card__img">
-        <img src={cardInfo.flag} alt="Flag pic" />
+        <a href={`countries/${cardInfo.name}`}>
+          <img className="country__img" src={cardInfo.flag} alt="Flag pic" />
+        </a>
       </div>
       <div className="card__text">
         <h2 className="card__name">{cardInfo.name}</h2>
