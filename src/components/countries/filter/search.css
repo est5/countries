@@ -14,7 +14,8 @@
   background-color: var(--elements-color);
   color: var(--text-color);
   border-radius: 4px;
-  border: 1px solid;
+  box-shadow: 0 0 2px hsla(0, 0%, 0%, 0.295);
+  border: none;
   padding: 16px 32px;
 }
 
