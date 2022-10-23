@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import './country.css';
 
 function CountryDetail(name: string | any) {
-  const { isSuccess, isLoading, data } = useQuery('countries', async () => {
+  const { isSuccess, isLoading, data } = useQuery('1', async () => {
     const res = await axios.get(
       `https://restcountries.com/v3.1/name/${name.name}`
     );
