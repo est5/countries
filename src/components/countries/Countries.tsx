@@ -11,34 +11,45 @@ function Countries() {
     return res.data;
   });
   const [countriesData, setCountriesData] = useState([]);
+  const [filteredByRegion, setFilteredByRegion] = useState([]);
 
   const keyword = useStore((state) => state.filter);
   const search = useStore((state) => state.search);
+  const setSearch = useStore((state) => state.setSearch);
 
   const filteredData = () => {
+    setSearch('');
     if (keyword == 'All') {
-      setCountriesData(data);
+      setFilteredByRegion(data);
     } else {
-      setCountriesData(data.filter((e: any) => e.region == keyword));
+      setFilteredByRegion(data.filter((e: any) => e.region == keyword));
     }
   };
-  useEffect(() => filteredData(), [keyword]);
+
+  useEffect(() => {
+    filteredData();
+  }, [keyword]);
+
+  useEffect(() => {
+    setCountriesData(filteredByRegion);
+  }, [filteredByRegion, keyword]);
 
   const searchCountry = () => {
-    if (search !== '') {
+    if (search == '') {
+      filteredData();
+    } else {
       setCountriesData(
-        countriesData.filter((e: any) =>
+        filteredByRegion.filter((e: any) =>
           e.name.common.toLowerCase().includes(search.toLowerCase())
         )
       );
-    } else {
-      filteredData();
     }
   };
   useEffect(() => searchCountry(), [search]);
 
   useEffect(() => {
     setCountriesData(data);
+    setFilteredByRegion(data);
   }, [isSuccess]);
 
   return (
