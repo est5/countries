@@ -1,5 +1,3 @@
-import axios from 'axios';
-import { Query, useQuery } from 'react-query';
 import './card.css';
 
 interface Info {
@@ -17,9 +15,7 @@ function CountrieCard(cardInfo: Info) {
         <img src={cardInfo.flag} alt="Flag pic" />
       </div>
       <div className="card__text">
-        <p className="card__name">
-          <h2>{cardInfo.name}</h2>
-        </p>
+        <h2 className="card__name">{cardInfo.name}</h2>
         <p className="card__population">
           <span className="description">Population:</span> {cardInfo.population}
         </p>

@@ -13,16 +13,29 @@ function Countries() {
   const [countriesData, setCountriesData] = useState([]);
 
   const keyword = useStore((state) => state.filter);
+  const search = useStore((state) => state.search);
+
   const filteredData = () => {
     if (keyword == 'All') {
       setCountriesData(data);
-      console.log(countriesData);
     } else {
       setCountriesData(data.filter((e: any) => e.region == keyword));
-      console.log(countriesData);
     }
   };
   useEffect(() => filteredData(), [keyword]);
+
+  const searchCountry = () => {
+    if (search !== '') {
+      setCountriesData(
+        countriesData.filter((e: any) =>
+          e.name.common.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    } else {
+      filteredData();
+    }
+  };
+  useEffect(() => searchCountry(), [search]);
 
   useEffect(() => {
     setCountriesData(data);

@@ -1,9 +1,13 @@
+import { useStore } from '../../../app/store';
 import './search.css';
 
 function SearchBar() {
+  const filterStore = useStore((state) => state.setSearch);
+
   return (
     <div className="search">
       <input
+        onChange={(e) => filterStore(e.target.value)}
         type="text"
         name="search"
         id="search"
