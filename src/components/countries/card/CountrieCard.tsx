@@ -11,19 +11,14 @@ interface Info {
 }
 
 function CountrieCard(cardInfo: Info) {
-  const { isLoading, data } = useQuery(cardInfo.flag, async () => {
-    const res = await axios.get(cardInfo.flag);
-    return res.data;
-  });
-
   return (
     <div className="card">
       <div className="card__img">
-        {isLoading ? 'Loading...' : <img src={cardInfo.flag} alt="Flag pic" />}
+        <img src={cardInfo.flag} alt="Flag pic" />
       </div>
       <div className="card__text">
         <p className="card__name">
-          <strong>{cardInfo.name}</strong>
+          <h2>{cardInfo.name}</h2>
         </p>
         <p className="card__population">
           <span className="description">Population:</span> {cardInfo.population}

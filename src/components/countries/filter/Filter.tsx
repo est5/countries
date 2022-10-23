@@ -11,7 +11,7 @@ function Filter() {
   const defaultOption = 'Select region';
   return (
     <Dropdown
-      className="filter"
+      controlClassName="filter"
       options={options}
       value={defaultOption}
       placeholder="Select an option"

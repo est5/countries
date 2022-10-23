@@ -1,2 +1,4 @@
 .filter {
+  background-color: var(--elements-color);
+  color: var(--text-color);
 }

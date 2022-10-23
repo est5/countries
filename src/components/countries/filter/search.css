@@ -1,0 +1,18 @@
+.search-icon {
+  position: absolute;
+  right: 24px;
+  color: var(--text-color);
+}
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search {
+  background-color: var(--elements-color);
+  color: var(--text-color);
+  border-radius: 666px;
+  border: 1px solid;
+  padding: 10px 24px;
+}
