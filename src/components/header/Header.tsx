@@ -28,7 +28,7 @@ function Header() {
           onClick={() => setMode(mode == 'light' ? 'dark' : 'light')}
         >
           <i className="fa-solid fa-circle-half-stroke"></i>{' '}
-          {mode.toUpperCase()} mode
+          {mode.toUpperCase()}
         </p>
       </header>
     </>

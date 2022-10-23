@@ -7,4 +7,5 @@ header {
 
 .mode-switch {
   cursor: pointer;
+  user-select: none;
 }

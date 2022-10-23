@@ -3,9 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--elements-color);
+  box-shadow: 0 0 6px hsla(0, 0%, 0%, 0.295);
   border-radius: 8px;
-  box-shadow: 0 0 6px var(--bg-color);
 }
+
 .card__img {
   height: 100%;
 }
