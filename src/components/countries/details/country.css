@@ -25,6 +25,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
+  gap: 40px;
 }
 
 .info__img {
@@ -38,6 +39,7 @@ a {
 .info__details {
   display: flex;
   flex-direction: column;
+  align-self: start;
   justify-content: center;
 }
 
@@ -67,6 +69,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  max-width: 50%;
 }
 @media (max-width: 750px) {
   .info {

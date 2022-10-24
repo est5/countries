@@ -106,7 +106,7 @@ function CountryDetail(name: string | any) {
                 <span className="description">Border Countries: </span>
                 <div className="borders">
                   {borderArr.map((ele: string) => (
-                    <p key={ele.charAt(0)} className="border__entry">
+                    <p key={ele} className="border__entry">
                       {ele}
                     </p>
                   ))}

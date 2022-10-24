@@ -5,3 +5,12 @@ nav {
 
   padding: 24px 0;
 }
+
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    gap: 16px;
+  }
+}
