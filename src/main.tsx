@@ -12,9 +12,8 @@ if (!localStorage.getItem('mode')) {
 const router = createBrowserRouter([
   { path: '/', element: <App />, errorElement: <ErrorPage /> },
   {
-    path: 'countries/:countrieName',
+    path: '/countries/:countrieName',
     element: <DetailRoot />,
-    errorElement: <ErrorPage />,
   },
 ]);
 
