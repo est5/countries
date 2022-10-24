@@ -14,7 +14,7 @@ function SearchBar() {
         type="text"
         name="search"
         id="search"
-        placeholder={'Search for a contry...'}
+        placeholder={'Search for a country...'}
         value={search}
       />
       <i className="search-icon fa-solid fa-magnifying-glass"></i>
