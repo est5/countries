@@ -6,16 +6,21 @@ import CountrieCard from './card/CountrieCard';
 import './countries.css';
 
 function Countries() {
-  const { isSuccess, isLoading, data } = useQuery('countries', async () => {
-    const res = await axios.get('https://restcountries.com/v3.1/all');
-    return res.data;
-  });
+  const { isIdle, isSuccess, isLoading, data } = useQuery(
+    'countries',
+    async () => {
+      const res = await axios.get('https://restcountries.com/v3.1/all');
+      setLoaded(false);
+      return res.data;
+    }
+  );
   const [countriesData, setCountriesData] = useState([]);
   const [filteredByRegion, setFilteredByRegion] = useState([]);
 
   const keyword = useStore((state) => state.filter);
   const search = useStore((state) => state.search);
   const setSearch = useStore((state) => state.setSearch);
+  const setLoaded = useStore((state) => state.setLoaded);
 
   const filteredData = () => {
     setSearch('');
@@ -51,6 +56,10 @@ function Countries() {
     setCountriesData(data);
     setFilteredByRegion(data);
   }, [isSuccess]);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, [isIdle]);
 
   return (
     <main>

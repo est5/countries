@@ -13,7 +13,12 @@ function CountrieCard(cardInfo: Info) {
     <div className="card">
       <div className="card__img">
         <a href={`countries/${cardInfo.name}`}>
-          <img className="country__img" src={cardInfo.flag} alt="Flag pic" />
+          <img
+            loading="lazy"
+            className="country__img"
+            src={cardInfo.flag}
+            alt="Flag pic"
+          />
         </a>
       </div>
       <div className="card__text">

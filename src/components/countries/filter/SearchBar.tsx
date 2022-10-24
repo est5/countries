@@ -4,10 +4,12 @@ import './search.css';
 function SearchBar() {
   const filterStore = useStore((state) => state.setSearch);
   const search = useStore((state) => state.search);
+  const loaded = useStore((state) => state.loaded);
 
   return (
     <div className="search">
       <input
+        disabled={loaded}
         onChange={(e) => filterStore(e.target.value)}
         type="text"
         name="search"
