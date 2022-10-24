@@ -5,10 +5,17 @@ import App from './App';
 import DetailRoot from './components/countries/details/DetailRoot';
 import ErrorPage from './ErrorPage';
 import './index.css';
+if (!localStorage.getItem('mode')) {
+  localStorage.setItem('mode', 'light');
+}
 
 const router = createBrowserRouter([
   { path: '/', element: <App />, errorElement: <ErrorPage /> },
-  { path: 'countries/:countrieName', element: <DetailRoot /> },
+  {
+    path: 'countries/:countrieName',
+    element: <DetailRoot />,
+    errorElement: <ErrorPage />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
