@@ -6,6 +6,7 @@
 - Typescript
 - React-query
 - React-router
+- Zustand
 
 #
 
